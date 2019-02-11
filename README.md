@@ -28,4 +28,4 @@ Currently only 3 kinds of plots are supported. More will be provided if deem nec
 [Peng Jin](https://www.linkedin.com/in/peng-jin-24a23b117/)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
