@@ -5,7 +5,7 @@ This tool can connect to Deribit's public endpoint (registration required) and g
 
 ## Installing
 ```bash
-git clone https://github.com/pengjin2/A-Volatility-Visulization-of-Deribit-Options-.git
+git clone https://github.com/pengjin2/Derbit-Volatility-Visulization.git
 ```
 
 ## Save data to local
