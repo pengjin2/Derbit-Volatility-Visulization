@@ -127,10 +127,14 @@ class vol_surface(object):
 
         x_grids, y_grids, z_grids = make_surf(x, y, z)
 
+
         if plot_type == "scatter_2D":
             # Plot axes
+            fig = plt.figure()
             ax = plt.axes()
-            plt.scatter(x=x, y=z, s=area, color='blue')
+            scat = plt.scatter(x=x, y=z, s=area, c=z)
+            plt.set_cmap('viridis_r')
+            fig.colorbar(scat, shrink=0.5, aspect=5)
             # Add fitted line for the scatter plot
             fitted_data = np.polyfit(x, z, 3)
             p = np.poly1d(fitted_data)
@@ -142,20 +146,9 @@ class vol_surface(object):
             plt.ylabel('Implied Volatility')
             # Set size legend
             for area in [area.min(), area.mean(), area.max()]:
-                plt.scatter([], [], alpha=0.3, s=area, color='blue', label=str(round(area / 3, 2)))
-            handles, labels = ax.get_legend_handles_labels()
-            plt.legend(handles[-3:], labels[-3:], scatterpoints=1, labelspacing=1, title='Order Size')
-
-        if plot_type == "scatter_3D":
-            ax = plt.axes(projection='3d')
-            ax.scatter3D(x, y, z, s=area, c=z, cmap='viridis')
-            ax.set_xlabel('Strike Price')
-            ax.set_ylabel('Time Remain to Expiration')
-            ax.set_zlabel('Implied Volatility')
-            for area in [area.min(), area.mean(), area.max()]:
-                ax.scatter3D([], [], [], alpha=0.3, s=area, label=round(area / 3, 2))
-            handles, labels = ax.get_legend_handles_labels()
-            plt.legend(handles[-3:], labels[-3:], scatterpoints=1, labelspacing=1, title='Order Size')
+                plt.scatter([], [], alpha=0.3, s=area, color='grey', label=str(round(area / 3, 2)))
+                handles, labels = ax.get_legend_handles_labels()
+                plt.legend(handles[-3:], labels[-3:], scatterpoints=1, labelspacing=1, title='Order Size')
 
         if plot_type == "surface_3D":
             fig = plt.figure()
@@ -225,4 +218,3 @@ if __name__ == '__main__':
         test = vol_surface(url, traceback=12, plot_type="scatter_2D", save_local=True)
 
         test.start()
-

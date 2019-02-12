@@ -8,6 +8,9 @@ This tool can connect to Deribit's public endpoint (registration required) and g
 git clone https://github.com/pengjin2/Derbit-Volatility-Visulization.git
 ```
 
+## Traceback
+Data to be included in the plot and data stream.
+
 ## Save data to local
 
 Data can be saved to local directory. When you set `save_local` = `True`, the data used to draw the session graphs will be updated automatically.
