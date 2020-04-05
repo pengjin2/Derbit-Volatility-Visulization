@@ -3,6 +3,10 @@ A visualization tool created to help gauge the volatility of Deribit options
 
 This tool can connect to Deribit's public endpoint (registration required) and get real-time analysis.
 
+**Note:**
+This project seems to be getting a lot attention. 
+I will try to update this project in the next 2 weeks.
+
 ## Installing
 ```bash
 git clone https://github.com/pengjin2/Derbit-Volatility-Visulization.git
